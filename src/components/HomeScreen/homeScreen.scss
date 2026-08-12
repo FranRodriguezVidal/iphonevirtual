@@ -1,0 +1,34 @@
+.homeScreen {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.homeScreen__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(178, 200, 255, 0.24), transparent 20%),
+    radial-gradient(circle at 80% 30%, rgba(77, 112, 201, 0.2), transparent 18%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.25)),
+    url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  filter: brightness(0.9) saturate(0.8);
+  transform: scale(1.06);
+}
+
+.homeScreen__topBar {
+  position: relative;
+  z-index: 1;
+  padding-top: max(12px, env(safe-area-inset-top));
+}
+
+.homeScreen__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px 12px;
+  padding: 74px 20px 120px;
+  align-content: start;
+}

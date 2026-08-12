@@ -1,0 +1,28 @@
+@use './styles/variables' as *;
+
+.deviceShell {
+  width: 100%;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: #090b11;
+  padding: 0;
+}
+
+.deviceScreen {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  max-width: 100vw;
+  overflow: hidden;
+  background: #000;
+  color: white;
+  font-family: $font-stack;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
+}
+
+.appLayer {
+  position: absolute;
+  inset: 0;
+}

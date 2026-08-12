@@ -1,0 +1,93 @@
+.statusBar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 0;
+  color: #fff;
+  font-size: 0.79rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.statusBar--withIsland {
+  padding-top: 10px;
+}
+
+.statusBar__left {
+  min-width: 72px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.statusBar__right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 88px;
+}
+
+.statusBar__time {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.statusBar__signal {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+
+.statusBar__signal span {
+  display: block;
+  width: 2px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.statusBar__signal span:nth-child(1) { height: 4px; }
+.statusBar__signal span:nth-child(2) { height: 6px; }
+.statusBar__signal span:nth-child(3) { height: 8px; }
+.statusBar__signal span:nth-child(4) { height: 10px; }
+
+.statusBar__wifi {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  transform: rotate(45deg) scale(0.75);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.statusBar__battery {
+  position: relative;
+  width: 24px;
+  height: 12px;
+  border: 1.6px solid rgba(255, 255, 255, 0.9);
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.statusBar__battery::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 3px;
+  width: 2px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1px;
+}
+
+.batteryFill {
+  position: absolute;
+  inset: 1px 1px 1px 1px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 2px;
+}
