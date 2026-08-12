@@ -1,14 +1,10 @@
 .dynamicIsland {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   width: 128px;
   height: 38px;
   border-radius: 999px;
-  background: rgba(14, 18, 24, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04), 0 10px 24px rgba(0, 0, 0, 0.25);
+  background: rgba(9, 12, 16, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 8px 18px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(18px);
   display: flex;
   align-items: center;
@@ -20,27 +16,6 @@
   width: 66px;
   height: 26px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.72);
   position: absolute;
-}
-
-.dynamicIsland__content {
-  position: relative;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-}
-
-.dynamicIsland__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #dfe9ff, #a5ceff);
-  box-shadow: 0 0 18px rgba(127, 171, 255, 0.75);
-}
-
-.dynamicIsland__dot--muted {
-  background: linear-gradient(135deg, #afb8d9, #7a8ac5);
-  opacity: 0.75;
 }

@@ -12,18 +12,18 @@ export function useDeviceTime() {
   }, [])
 
   return useMemo(() => {
-    const timeLabel = new Intl.DateTimeFormat('en-US', {
-      hour: 'numeric',
+    const timeLabel = new Intl.DateTimeFormat('es-ES', {
+      hour: '2-digit',
       minute: '2-digit',
+      hour12: false,
     }).format(now)
 
-    const dateLabel = new Intl.DateTimeFormat('en-US', {
-      weekday: 'long',
-      month: 'long',
-      day: 'numeric',
-    }).format(now)
+    const weekday = new Intl.DateTimeFormat('es-ES', { weekday: 'short' }).format(now)
+    const month = new Intl.DateTimeFormat('es-ES', { month: 'short' }).format(now)
+    const formattedWeekday = weekday.charAt(0).toUpperCase() + weekday.slice(1)
+    const dateLabel = `${formattedWeekday} ${now.getDate()} ${month}`
 
-    const shortDate = new Intl.DateTimeFormat('en-US', {
+    const shortDate = new Intl.DateTimeFormat('es-ES', {
       weekday: 'short',
       month: 'short',
       day: 'numeric',

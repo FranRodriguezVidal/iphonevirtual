@@ -3,10 +3,10 @@
   z-index: 2;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px 0;
+  justify-content: flex-end;
+  padding: 8px 0 0;
   color: #fff;
-  font-size: 0.79rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
@@ -15,8 +15,12 @@
   padding-top: 10px;
 }
 
+.statusBar--compact {
+  padding-top: 0;
+}
+
 .statusBar__left {
-  min-width: 72px;
+  min-width: 0;
   display: flex;
   justify-content: flex-start;
 }
@@ -25,8 +29,16 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 8px;
-  min-width: 88px;
+  gap: 6px;
+  min-width: 150px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.statusBar__network {
+  font-size: clamp(1.05rem, 1.8vw, 1.7rem);
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  margin-right: 4px;
 }
 
 .statusBar__time {
@@ -39,24 +51,25 @@
   display: inline-flex;
   align-items: flex-end;
   gap: 2px;
-  height: 12px;
+  height: 16px;
+  margin-right: 2px;
 }
 
 .statusBar__signal span {
   display: block;
-  width: 2px;
+  width: 3px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.95);
 }
 
-.statusBar__signal span:nth-child(1) { height: 4px; }
-.statusBar__signal span:nth-child(2) { height: 6px; }
-.statusBar__signal span:nth-child(3) { height: 8px; }
-.statusBar__signal span:nth-child(4) { height: 10px; }
+.statusBar__signal span:nth-child(1) { height: 5px; }
+.statusBar__signal span:nth-child(2) { height: 8px; }
+.statusBar__signal span:nth-child(3) { height: 11px; }
+.statusBar__signal span:nth-child(4) { height: 15px; }
 
 .statusBar__wifi {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   border: 2px solid rgba(255, 255, 255, 0.9);
   border-top-color: transparent;
   border-left-color: transparent;
@@ -67,27 +80,56 @@
 
 .statusBar__battery {
   position: relative;
-  width: 24px;
-  height: 12px;
-  border: 1.6px solid rgba(255, 255, 255, 0.9);
-  border-radius: 3px;
-  display: inline-block;
+  width: 31px;
+  height: 18px;
+  border: 1.6px solid rgba(255, 255, 255, 0.95);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .statusBar__battery::after {
   content: '';
   position: absolute;
-  right: -3px;
-  top: 3px;
+  right: -4px;
+  top: 5px;
   width: 2px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.9);
+  height: 6px;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 1px;
+}
+
+.statusBar__battery--charging {
+  border-color: rgba(54, 222, 122, 0.95);
+}
+
+.statusBar__battery--charging::after {
+  background: rgba(54, 222, 122, 0.95);
+}
+
+.statusBar__battery--charging .batteryFill {
+  background: rgba(54, 222, 122, 0.95);
 }
 
 .batteryFill {
   position: absolute;
-  inset: 1px 1px 1px 1px;
-  background: rgba(255, 255, 255, 0.95);
+  left: 1px;
+  top: 1px;
+  bottom: 1px;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 2px;
+}
+
+.statusBar__batteryText {
+  position: relative;
+  z-index: 1;
+  font-size: 0.58rem;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.96);
 }

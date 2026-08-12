@@ -4,26 +4,48 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(180deg, rgba(8, 11, 19, 0.35), rgba(7, 10, 17, 0.2));
+  background: rgba(7, 10, 17, 0.18);
   overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
 }
 
 .lockScreen__wallpaper {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(93, 112, 153, 0.85), transparent 28%),
-    radial-gradient(circle at 75% 20%, rgba(74, 122, 171, 0.75), transparent 30%),
-    linear-gradient(180deg, rgba(12, 16, 29, 0.4), rgba(18, 23, 37, 0.65)),
-    url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-  filter: saturate(1.05) brightness(0.8);
-  transform: scale(1.06);
+  background: linear-gradient(180deg, #b6c6da 0%, #afc0d9 100%);
+  filter: saturate(1.06) brightness(1);
+  transform: scale(1.02);
 }
 
 .lockScreen__header {
   position: relative;
   z-index: 1;
-  padding-top: max(12px, env(safe-area-inset-top));
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 18px;
+  padding: max(18px, env(safe-area-inset-top)) 8px 0 8px;
+}
+
+.lockScreen__brand {
+  font-size: clamp(3.2rem, 7vw, 7.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.09em;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.96);
+  text-transform: uppercase;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.lockScreen__capsule {
+  width: clamp(220px, 36vw, 460px);
+  height: clamp(62px, 9vw, 94px);
+  border-radius: 999px;
+  background: rgba(6, 8, 10, 0.88);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
 .lockScreen__content {
@@ -33,7 +55,8 @@
   align-items: center;
   justify-content: center;
   flex: 1;
-  padding-inline: 32px;
+  padding-inline: 0;
+  margin-top: -6px;
 }
 
 .lockScreen__timeBlock {
@@ -42,65 +65,23 @@
   text-shadow: 0 8px 16px rgba(0, 0, 0, 0.28);
 }
 
-.lockScreen__time {
-  margin: 0;
-  font-size: clamp(4.2rem, 14vw, 6.4rem);
-  line-height: 1;
-  letter-spacing: -0.08em;
-  font-weight: 300;
+.lockScreen__date {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 600;
 }
 
-.lockScreen__date {
-  margin: 14px 0 0;
-  font-size: 1.06rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
+.lockScreen__time {
+  margin: 0;
+  font-size: clamp(7.8rem, 20vw, 16rem);
+  line-height: 0.74;
+  letter-spacing: -0.12em;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.96);
 }
 
 .lockScreen__footer {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: max(20px, env(safe-area-inset-bottom));
-}
-
-.lockScreen__quickActions {
-  display: flex;
-  width: min(72%, 260px);
-  justify-content: space-between;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.lockScreen__unlockArea {
-  width: min(76%, 280px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 12px 4px;
-  border-radius: 999px;
-  cursor: grab;
-  user-select: none;
-  touch-action: none;
-}
-
-.lockScreen__unlockBar {
-  width: 120px;
-  height: 5px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 18px rgba(255, 255, 255, 0.25);
-}
-
-.lockScreen__unlockText {
-  font-size: 0.82rem;
-  letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.78);
+  display: none;
 }
