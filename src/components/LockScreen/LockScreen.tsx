@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useDeviceTime } from '../../hooks/useDeviceTime'
 import { useGesture } from '../../hooks/useGesture'
+import { DynamicIsland } from '../DynamicIsland/DynamicIsland'
 import { StatusBar } from '../StatusBar/StatusBar'
 import './lockScreen.scss'
 
@@ -27,9 +28,11 @@ export function LockScreen({ onUnlock }: LockScreenProps) {
       <div className="lockScreen__wallpaper" aria-hidden="true" />
 
       <header className="lockScreen__header">
-        <div className="lockScreen__brand">DIGI ES</div>
-        <div className="lockScreen__capsule" aria-hidden="true" />
-        <StatusBar timeLabel={timeLabel} compact showSignalBars showBatteryLevel />
+        <div className="lockScreen__topBar">
+          <div className="lockScreen__brand">DIGI ES</div>
+          <DynamicIsland />
+          <StatusBar timeLabel={timeLabel} compact showSignalBars showBatteryLevel />
+        </div>
       </header>
 
       <main className="lockScreen__content">
